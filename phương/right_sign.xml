@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<myfacedetector type_id="opencv-haar-classifier">
+  <size>
+    24 24</size>
+  <stages>
+    <_>
+      <trees>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  3 2 12 3 -1.</_>
+                <_>
+                  6 5 6 3 2.</_></rects>
+              <tilted>1</tilted></feature>
+            <threshold>0.0619365610182285</threshold>
+            <left_val>-1.</left_val>
+            <right_val>0.9999986290931702</right_val></_></_></trees>
+      <stage_threshold>0.9999986290931702</stage_threshold>
+      <parent>-1</parent>
+      <next>-1</next></_>
+    <_>
+      <trees>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  12 0 12 3 -1.</_>
+                <_>
+                  15 3 6 3 2.</_></rects>
+              <tilted>1</tilted></feature>
+            <threshold>0.0777376070618629</threshold>
+            <left_val>-1.</left_val>
+            <right_val>0.9999982714653015</right_val></_></_></trees>
+      <stage_threshold>0.9999982714653015</stage_threshold>
+      <parent>0</parent>
+      <next>-1</next></_>
+    <_>
+      <trees>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  12 4 9 8 -1.</_>
+                <_>
+                  10 6 9 4 2.</_></rects>
+              <tilted>1</tilted></feature>
+            <threshold>-0.0524746403098106</threshold>
+            <left_val>0.9905213117599487</left_val>
+            <right_val>-0.9999895095825195</right_val></_></_></trees>
+      <stage_threshold>0.9905213117599487</stage_threshold>
+      <parent>1</parent>
+      <next>-1</next></_>
+    <_>
+      <trees>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  9 7 2 4 -1.</_>
+                <_>
+                  9 9 2 2 2.</_></rects>
+              <tilted>0</tilted></feature>
+            <threshold>-0.0104714604094625</threshold>
+            <left_val>0.9348652958869934</left_val>
+            <right_val>-0.9799100160598755</right_val></_></_>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  12 15 12 5 -1.</_>
+                <_>
+                  15 15 6 5 2.</_></rects>
+              <tilted>0</tilted></feature>
+            <threshold>1.3594810152426362e-003</threshold>
+            <left_val>0.3265546858310700</left_val>
+            <right_val>-0.8683717846870422</right_val></_></_></trees>
+      <stage_threshold>-0.6533551812171936</stage_threshold>
+      <parent>2</parent>
+      <next>-1</next></_>
+    <_>
+      <trees>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  0 9 12 13 -1.</_>
+                <_>
+                  3 9 6 13 2.</_></rects>
+              <tilted>0</tilted></feature>
+            <threshold>0.1725735962390900</threshold>
+            <left_val>-0.9324048757553101</left_val>
+            <right_val>0.9613124132156372</right_val></_></_>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  8 18 14 4 -1.</_>
+                <_>
+                  8 18 7 4 2.</_></rects>
+              <tilted>0</tilted></feature>
+            <threshold>0.0336907394230366</threshold>
+            <left_val>0.2061332017183304</left_val>
+            <right_val>-1.0000100135803223</right_val></_></_>
+        <_>
+          <_>
+            <feature>
+              <rects>
+                <_>
+                  12 1 12 2 -1.</_>
+                <_>
+                  15 4 6 2 2.</_></rects>
+              <tilted>1</tilted></feature>
+            <threshold>0.0780430212616920</threshold>
+            <left_val>-0.9533411860466003</left_val>
+            <right_val>0.8196036219596863</right_val></_></_></trees>
+      <stage_threshold>0.0933318063616753</stage_threshold>
+      <parent>3</parent>
+      <next>-1</next></_></stages></myfacedetector>
+</opencv_storage>

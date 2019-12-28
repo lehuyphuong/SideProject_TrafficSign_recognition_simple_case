@@ -1,0 +1,66 @@
+//#include<opencv2\cv.h>
+#include<opencv2/highgui.hpp>
+#include<opencv2/objdetect/objdetect.hpp>
+#include<iostream>
+#include<stdio.h>
+#include<opencv2/imgproc/imgproc.hpp>
+
+using namespace std;
+using namespace cv;
+
+int main() {
+	VideoCapture cap(0);
+	if (!cap.isOpened()) {
+		cout << "change the camera port number";
+		return -1;
+	}
+	// Load Face cascade (.xml file)
+	CascadeClassifier stop_cascade;
+	stop_cascade.load("D:\\2019\\OpenCV\\opencv\\sources\\data\\haarcascades\\stop_sign.xml");
+
+	CascadeClassifier left_cascade;
+	left_cascade.load("D:\\2019\\OpenCV\\opencv\\sources\\data\\haarcascades\\left_sign.xml");
+
+	CascadeClassifier right_cascade;
+	right_cascade.load("D:\\2019\\OpenCV\\opencv\\sources\\data\\haarcascades\\right_sign.xml");
+
+	while (true) {
+		Mat frame;
+		cap.read(frame);
+
+		// detect stop signs
+		std::vector<Rect> stops;
+		stop_cascade.detectMultiScale(frame, stops, 1.5, 5);
+		// draw a circle for a stop sign
+		for (int i = 0; i < stops.size(); i++)
+		{
+			Point center(stops[i].x + stops[i].width * 0.5, stops[i].y + stops[i].height * 0.5);
+			ellipse(frame, center, Size(stops[i].width * 0.5, stops[i].height * 0.5), 0, 0, 360, Scalar(0, 0, 255), 4, 8, 0);
+		}
+
+		// detect left signs
+		std::vector<Rect> lefts;
+		left_cascade.detectMultiScale(frame, lefts, 1.5, 5);
+		// draw a circle for a left sign
+		for (int i = 0; i < lefts.size(); i++)
+		{
+			Point center(lefts[i].x + lefts[i].width * 0.5, lefts[i].y + lefts[i].height * 0.5);
+			ellipse(frame, center, Size(lefts[i].width * 0.5, lefts[i].height * 0.5), 0, 0, 360, Scalar(0, 255, 0), 4, 8, 0);
+		}
+
+		// detect right signs
+		std::vector<Rect> rights;
+		right_cascade.detectMultiScale(frame, rights, 1.5, 5);
+		// draw a circle for a left sign
+		for (int i = 0; i < rights.size(); i++)
+		{
+			Point center(rights[i].x + rights[i].width * 0.5, rights[i].y + rights[i].height * 0.5);
+			ellipse(frame, center, Size(rights[i].width * 0.5, rights[i].height * 0.5), 0, 0, 360, Scalar(255, 0, 0), 4, 8, 0);
+		}
+
+		imshow("camera", frame);
+		if (waitKey(30) == 27) {
+			return 0;
+		}
+	}
+}

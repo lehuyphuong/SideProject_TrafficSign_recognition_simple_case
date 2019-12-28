@@ -1,0 +1,32 @@
+import cv2
+import numpy as np
+
+stop_cascade = cv2.CascadeClassifier("D:/2019/OpenCV/opencv/sources/data/haarcascades/stop_sign.xml")# địa chỉ file xml
+left_cascade = cv2.CascadeClassifier("D:/2019/OpenCV/opencv/sources/data/haarcascades/left_sign.xml")
+right_cascade = cv2.CascadeClassifier("D:/2019/OpenCV/opencv/sources/data/haarcascades/right_sign.xml")
+
+cap= cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    
+    stops = stop_cascade.detectMultiScale(gray, 1.5,5)
+    lefts = left_cascade.detectMultiScale(gray, 1.5,5)
+    rights = right_cascade.detecMultiScale(gray, 1.5,5)
+
+    for (x,y,w,h) in stops:
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
+
+    for (x1,y1,w1,h1) in lefts:
+        cv2.rectangle(frame,(x1,y1),(x1+h1,y1+h1),(255,0,0),2)
+
+    for (x2,y2,w2,h2) in rights:
+        cv2.rectangle(frame,(x2,y2),(x2+w2,y2+h2),(0,0,255),2)
+
+    cv2.imshow("camera", frame)
+    if cv2.waitKey(1) &0xFF == 27:
+        break
+
+cap.release()
+cv2.destroyAllWindows()
